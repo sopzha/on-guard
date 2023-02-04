@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
+import { IncidentService } from '../incident.service';
 
 @Component({
   selector: 'app-map-full',
@@ -10,7 +11,11 @@ export class MapFullComponent implements OnInit {
   center: google.maps.LatLngLiteral = {lat: 42.3600825, lng: -71.0588801};
   zoom = 10;
 
-  constructor() {
+  incidentPositions: google.maps.LatLngLiteral[] = [];
+  markerClustererImagePath =
+      'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m';
+
+  constructor(private incidentService: IncidentService) {
   }
 
   ngOnInit(): void {
@@ -21,8 +26,17 @@ export class MapFullComponent implements OnInit {
     this.center = (event.latLng.toJSON());
   }
 
-  addMarkers() {
-
+  addMarkers(): void {
+    this.incidentService.getIncidents()
+        .subscribe(incidents => {
+          for (const incident of incidents.result.records) {
+            if (incident.Lat) {
+              this.incidentPositions.push({
+                lat: parseFloat(incident.Lat),
+                lng: parseFloat(incident.Long),
+              })
+            }
+          }
+        });
   }
-
 }

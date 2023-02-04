@@ -3,4 +3,9 @@
             [center]="center"
             [zoom]="zoom"
             (mapClick)="moveMap($event)">
+    <map-marker-clusterer [imagePath]="markerClustererImagePath">
+        <map-marker *ngFor="let incidentPosition of incidentPositions"
+                    [position]="incidentPosition">
+        </map-marker>
+    </map-marker-clusterer>
 </google-map>
