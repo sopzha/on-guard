@@ -1,1 +1,10 @@
-<p>user-input works!</p>
+<input placeholder="origin" #origin>
+<input placeholder="destination" #destination>
+<select #travelMode >
+    <option value="walking">Walking</option>
+    <option value="driving">Driving</option>
+    <option value="bicycling">Bicycling</option>
+</select>
+<button (click)="onSubmit(origin.value, destination.value, travelMode.value)">Submit</button>
+
+<!-- <app-map-select [origin]="originLoc" [destination]="destinationLoc" [travelMode]="travelModeName"></app-map-select> -->

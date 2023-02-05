@@ -1,1 +1,11 @@
-<p>map-select works!</p>
+<app-user-input (newDirectionsRequestEvent)="generateDirections($event)"></app-user-input>
+
+<google-map height="400px"
+            width="750px"
+            [center]="center"
+            [zoom]="zoom"
+            (mapClick)="moveMap($event)">
+    <map-directions-renderer *ngIf="(directionsResults$ | async) as directionsResults"
+                            [directions]="directionsResults">
+    </map-directions-renderer>
+</google-map>
