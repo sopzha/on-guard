@@ -7,7 +7,7 @@ import { Observable, tap } from 'rxjs';
 })
 export class IncidentService {
 
-  private incidentsUrl = 'https://data.boston.gov/api/3/action/datastore_search?resource_id=b973d8cb-eeb2-4e7e-99da-c92938efc9c0&limit=500'
+  private incidentsUrl = 'https://data.boston.gov/api/3/action/datastore_search?resource_id=b973d8cb-eeb2-4e7e-99da-c92938efc9c0&limit=1000'
 
   constructor(private http: HttpClient) { }
 

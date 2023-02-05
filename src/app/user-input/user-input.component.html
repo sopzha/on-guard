@@ -1,8 +1,37 @@
-<input placeholder="origin" #origin>
+<!-- <input placeholder="origin" #origin>
 <input placeholder="destination" #destination>
 <select #travelMode >
     <option value="walking">Walking</option>
     <option value="driving">Driving</option>
     <option value="bicycling">Bicycling</option>
 </select>
-<button (click)="onSubmit(origin.value, destination.value, travelMode.value)">Submit</button>
+<button (click)="onSubmit(origin.value, destination.value, travelMode.value)">Submit</button> -->
+
+<form>
+    <div class="grid">
+    <div class="row">
+      <div class="col-md-4">
+        <input placeholder="Origin" class="form-control" #origin>
+      </div>
+
+      <div class="col-md-4">
+        <input placeholder="Destination" class="form-control" #destination>
+      </div>
+
+      <div class="col-md-2">
+        <select #travelMode class="form-control">
+            <option value="walking">Walking</option>
+            <option value="driving">Driving</option>
+            <option value="bicycling">Bicycling</option>
+        </select>
+      </div>
+
+      <div class="col-md-2">
+        <button (click)="onSubmit(origin.value, destination.value, travelMode.value)" class="btn btn-primary">Submit</button>
+      </div>
+
+    </div>
+    </div>
+        
+    
+</form>
