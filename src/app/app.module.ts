@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { MapFullComponent } from './map-full/map-full.component';
 import { MapSelectComponent } from './map-select/map-select.component';
 import { UserInputComponent } from './user-input/user-input.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { UserInputComponent } from './user-input/user-input.component';
     FormsModule,
     HttpClientModule,
     GoogleMapsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
